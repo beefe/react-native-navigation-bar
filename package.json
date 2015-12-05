@@ -1,0 +1,31 @@
+{
+  "name": "react-native-navigation-bar",
+  "version": "0.1.0",
+  "description": "react-native-navigation-bar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beefe/react-native-navigation-bar.git"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "navigation"
+  ],
+  "author": {
+    "name": "zooble",
+    "email": "wenliang.web@gmail.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beefe/react-native-navigation-bar/issues"
+  },
+  "homepage": "https://github.com/beefe/react-native-navigation-bar#readme"
+}
