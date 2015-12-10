@@ -6,7 +6,7 @@ Since most of our apps have a similar navigationBar, we made it to be a common c
 
 Needs react-native >= 0.14.2
 
-![ios](./doc/ios.png) ![android](./doc/android.png)
+![ui](./doc/ui.jpg)
 
 ###Documentation
 ```
@@ -37,7 +37,7 @@ Needs react-native >= 0.14.2
 ```
 	import NavigationBar from 'react-native-navigation-bar';
 
-	<NavBar 
+	<NavigationBar 
 		title={'this is a test'}
 		height={44}
 		titleColor={'#fff'}
