@@ -32,7 +32,7 @@ Needs react-native >= 0.14.2
 ```
 
 ####Step 2 - import and use in project
-```
+```javascript
 	import NavigationBar from 'react-native-navigation-bar';
 
 	<NavigationBar 
