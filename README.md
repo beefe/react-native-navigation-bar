@@ -15,11 +15,9 @@ Needs react-native >= 0.14.2
 	height: PropTypes.number,
 	titleColor: PropTypes.string,
 	backgroundColor: PropTypes.string,
-	leftButtonIcon: Image.propTypes.source,
 	leftButtonTitle: PropTypes.string,
 	leftButtonTitleColor: PropTypes.string,
 	onLeftButtonPress: PropTypes.func,
-	rightButtonIcon: Image.propTypes.source,
 	rightButtonTitle: PropTypes.string,
 	rightButtonTitleColor: PropTypes.string,
 	onRightButtonPress: PropTypes.func
