@@ -25,7 +25,7 @@ export default class NavigationBar extends React.Component{
 		rightButtonTitle: PropTypes.string,
 		rightButtonTitleColor: PropTypes.string,
 		onRightButtonPress: PropTypes.func
-	}
+	};
 
 	static defaultProps = {
 		height: 44,
@@ -35,7 +35,7 @@ export default class NavigationBar extends React.Component{
 		leftButtonTitleColor: '#000',
 		rightButtonTitle: null,
 		rightButtonTitleColor: '#000'
-	}
+	};
 
 	_renderLeftIcon() {
 		if(this.props.leftButtonIcon){
