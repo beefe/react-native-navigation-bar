@@ -37,6 +37,10 @@ export default class NavigationBar extends React.Component{
 		rightButtonTitleColor: '#000'
 	};
 
+	shouldComponentUpdate(nextProps, nextState, context) {
+		
+	}
+
 	_renderLeftIcon() {
 		if(this.props.leftButtonIcon){
 			return (
