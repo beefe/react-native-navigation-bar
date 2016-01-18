@@ -1,5 +1,7 @@
 # react-native-navigation-bar
 
+
+
 NavigationBar written in pure javascript for cross-platform support
 
 Since most of our apps have a similar navigationBar, we made it to be a common component
