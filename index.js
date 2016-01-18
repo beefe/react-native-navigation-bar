@@ -57,7 +57,7 @@ export default class NavigationBar extends React.Component{
 		let height = props.height;
 		let titleColor = props.titleColor;
 		let backgroundColor = props.backgroundColor;
-		let leftButtonTitle = props.leftButtonTittle;
+		let leftButtonTitle = props.leftButtonTitle;
 		let leftButtonTitleColor = props.leftButtonTitleColor;
 		let onLeftButtonPress = props.onLeftButtonPress;
 		let rightButtonTitle = props.rightButtonTitle;
