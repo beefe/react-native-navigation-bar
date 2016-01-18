@@ -11,6 +11,8 @@ import React, {
 	Platform
 } from 'react-native';
 
+let width = Dimensions.get('window').width;
+
 export default class NavigationBar extends React.Component{
 
 	static propTypes = {
@@ -37,66 +39,100 @@ export default class NavigationBar extends React.Component{
 		rightButtonTitleColor: '#000'
 	};
 
+	componentWillMount(){
+		this.state = this._getStateFromProps(this.props);
+	}
+
+	componentWillReceiveProps(newProps){
+		let newState = this._getStateFromProps(newProps);
+		this.setState(newState);
+	}
+
 	shouldComponentUpdate(nextProps, nextState, context) {
-		
+		return JSON.stringify([nextState, context]) !== JSON.stringify([this.state, context]);
+	}
+
+	_getStateFromProps(props){
+		let title = props.title;
+		let height = props.height;
+		let titleColor = props.titleColor;
+		let backgroundColor = props.backgroundColor;
+		let leftButtonTitle = props.leftButtonTittle;
+		let leftButtonTitleColor = props.leftButtonTitleColor;
+		let onLeftButtonPress = props.onLeftButtonPress;
+		let rightButtonTitle = props.rightButtonTitle;
+		let rightButtonTitleColor = props.rightButtonTitleColor;
+		let onRightButtonPress = props.onRightButtonPress;
+		return {
+			title,
+			height,
+			titleColor,
+			backgroundColor,
+			leftButtonTitle,
+			leftButtonTitleColor,
+			onLeftButtonPress,
+			rightButtonTitle,
+			rightButtonTitleColor,
+			onRightButtonPress
+		};
 	}
 
 	_renderLeftIcon() {
-		if(this.props.leftButtonIcon){
+		if(this.state.leftButtonIcon){
 			return (
-				<Image style={styles.leftButtonIcon} resizeMode={'contain'} source={this.props.leftButtonIcon} />
+				<Image style={styles.leftButtonIcon} resizeMode={'contain'} source={this.state.leftButtonIcon} />
 			);
 		}
 		return null;
 	}
 
 	_renderRightIcon() {
-		if(this.props.rightButtonIcon){
+		if(this.state.rightButtonIcon){
 			return (
-				<Image style={styles.rightButtonIcon} resizeMode={'contain'} source={this.props.rightButtonIcon} />
+				<Image style={styles.rightButtonIcon} resizeMode={'contain'} source={this.state.rightButtonIcon} />
 			);
 		}
 		return null;
 	}
 
 	_onLeftButtonPressHandle(event) {
-		let onPress = this.props.onLeftButtonPress;
+		let onPress = this.state.onLeftButtonPress;
 		typeof onPress === 'function' && onPress(event);
 	}
 
 	_onRightButtonPressHandle(event) {
-		let onPress = this.props.onRightButtonPress;
+		let onPress = this.state.onRightButtonPress;
 		typeof onPress === 'function' && onPress(event);
 	}
 
 	render() {
-		let height = Platform.OS === 'ios' ? this.props.height + 20 : this.props.height;
+		let height = Platform.OS === 'ios' ? this.state.height + 20 : this.state.height;
 		return (
 			<View style={[styles.container, {
 				height: height,
-				backgroundColor: this.props.backgroundColor
+				backgroundColor: this.state.backgroundColor
 			}]}>
 
 				<TouchableOpacity onPress={this._onLeftButtonPressHandle.bind(this)}>
 					<View style={styles.leftButton}>
 						{this._renderLeftIcon()}
-						<Text style={[styles.leftButtonTitle, {color: this.props.leftButtonTitleColor}]}>
-							{this.props.leftButtonTitle}
+						<Text style={[styles.leftButtonTitle, {color: this.state.leftButtonTitleColor}]}>
+							{this.state.leftButtonTitle}
 						</Text>
 					</View>
 				</TouchableOpacity>
 
 				<View style={styles.title}>
-					<Text style={[styles.titleText, {color: this.props.titleColor}]} numberOfLines={1}>
-						{this.props.title}
+					<Text style={[styles.titleText, {color: this.state.titleColor}]} numberOfLines={1}>
+						{this.state.title}
 					</Text>
 				</View>
 
 				<TouchableOpacity onPress={this._onRightButtonPressHandle.bind(this)}>
 					<View style={styles.rightButton}>
 						{this._renderRightIcon()}
-						<Text style={[styles.rightButtonTitle, {color: this.props.rightButtonTitleColor}]}>
-							{this.props.rightButtonTitle}
+						<Text style={[styles.rightButtonTitle, {color: this.state.rightButtonTitleColor}]}>
+							{this.state.rightButtonTitle}
 						</Text>
 					</View>
 				</TouchableOpacity>
@@ -113,7 +149,7 @@ let styles = StyleSheet.create({
 		top: 0,
 		left: 0,
 		flexDirection: 'row',
-		width: Dimensions.get('window').width
+		width: width
 	},
 	leftButton: {
 		flex: 1,
@@ -137,7 +173,7 @@ let styles = StyleSheet.create({
 		alignItems: 'center',
 		paddingTop: 1,
 		justifyContent: 'center',
-		width: Dimensions.get('window').width - 200,
+		width: width - 200,
 		overflow: 'hidden'
 	},
 	titleText: {
@@ -171,7 +207,7 @@ if(Platform.OS === 'ios'){
 			top: 0,
 			left: 0,
 			flexDirection: 'row',
-			width: Dimensions.get('window').width,
+			width: width,
 			paddingTop: 20
 		},
 		rightButton: {
