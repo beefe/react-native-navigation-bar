@@ -1,8 +1,14 @@
-'use strict';
+/**
+ * react-native-navigation-bar main
+ */
 
 import React, {
+	Component,
+	PropTypes
+} from 'react';
+
+import {
 	StyleSheet,
-	PropTypes,
 	View,
 	Image,
 	Text,
@@ -13,7 +19,7 @@ import React, {
 
 let width = Dimensions.get('window').width;
 
-export default class NavigationBar extends React.Component{
+export default class NavigationBar extends Component{
 
 	static propTypes = {
 		title: PropTypes.string.isRequired,
