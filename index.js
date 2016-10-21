@@ -59,31 +59,8 @@ export default class NavigationBar extends Component{
 	}
 
 	_getStateFromProps(props){
-		let title = props.title;
-		let height = props.height;
-		let titleColor = props.titleColor;
-		let backgroundColor = props.backgroundColor;
-		let leftButtonTitle = props.leftButtonTitle;
-		let leftButtonTitleColor = props.leftButtonTitleColor;
-		let onLeftButtonPress = props.onLeftButtonPress;
-		let rightButtonTitle = props.rightButtonTitle;
-		let rightButtonTitleColor = props.rightButtonTitleColor;
-		let onRightButtonPress = props.onRightButtonPress;
-		let leftButtonIcon = props.leftButtonIcon;
-		let rightButtonIcon = props.rightButtonIcon;
 		return {
-			title,
-			height,
-			titleColor,
-			backgroundColor,
-			leftButtonTitle,
-			leftButtonTitleColor,
-			onLeftButtonPress,
-			rightButtonTitle,
-			rightButtonTitleColor,
-			onRightButtonPress,
-			leftButtonIcon,
-			rightButtonIcon
+			...props
 		};
 	}
 
