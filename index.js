@@ -67,7 +67,7 @@ export default class NavigationBar extends Component{
 	_renderLeftIcon() {
 		if(this.state.leftButtonIcon){
 			return (
-				<Image style={styles.leftButtonIcon} resizeMode={'contain'} source={this.state.leftButtonIcon} />
+				<Image style={[styles.leftButtonIcon, this.state.leftButtonIconStyle || {}]} resizeMode={'contain'} source={this.state.leftButtonIcon} />
 			);
 		}
 		return null;
@@ -76,7 +76,7 @@ export default class NavigationBar extends Component{
 	_renderRightIcon() {
 		if(this.state.rightButtonIcon){
 			return (
-				<Image style={styles.rightButtonIcon} resizeMode={'contain'} source={this.state.rightButtonIcon} />
+				<Image style={[styles.rightButtonIcon, this.state.rightButtonIconStyle || {}]} resizeMode={'contain'} source={this.state.rightButtonIcon} />
 			);
 		}
 		return null;
