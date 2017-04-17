@@ -10,7 +10,7 @@ Needs react-native >= 0.14.2
 
 ![ui](./doc/ui.jpg)
 
-###Documentation
+### Documentation
 ```
 	title: PropTypes.string.isRequired,
 	//not include the height of statusBar on ios platform
@@ -25,15 +25,15 @@ Needs react-native >= 0.14.2
 	onRightButtonPress: PropTypes.func
 ```
 
-###Usage
+### Usage
 
-####Step 1 - install
+#### Step 1 - install
 
 ```
 	npm install react-native-navigation-bar --save
 ```
 
-####Step 2 - import and use in project
+#### Step 2 - import and use in project
 ```javascript
 	import NavigationBar from 'react-native-navigation-bar';
 
